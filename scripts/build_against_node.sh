@@ -25,6 +25,7 @@ publish
 # now test building against shared sqlite
 echo "building from source to test against external libsqlite3"
 export NODE_SQLITE3_JSON1=no
+export NODE_SQLITE3_MATH_FUNCTIONS=no
 if [[ $(uname -s) == 'Darwin' ]]; then
     brew update
     brew install sqlite
@@ -34,6 +35,7 @@ else
 fi
 npm test
 export NODE_SQLITE3_JSON1=yes
+export NODE_SQLITE3_MATH_FUNCTIONS=yes
 
 platform=$(uname -s | sed "y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/")
 

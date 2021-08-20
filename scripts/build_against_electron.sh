@@ -49,6 +49,7 @@ make clean
 
 # now test building against shared sqlite
 export NODE_SQLITE3_JSON1=no
+export NODE_SQLITE3_MATH_FUNCTIONS=no
 if [[ $(uname -s) == 'Darwin' ]]; then
     brew update
     brew install sqlite
@@ -58,3 +59,4 @@ else
 fi
 electron_test
 export NODE_SQLITE3_JSON1=yes
+export NODE_SQLITE3_MATH_FUNCTIONS=yes
